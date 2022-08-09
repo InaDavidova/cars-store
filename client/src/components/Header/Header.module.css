@@ -5,6 +5,7 @@ nav {
     height: 10vh;
     background-color: RGB(56, 56, 56);
     box-shadow: inset 0 -5px 20px gray;
+    letter-spacing: 2px;
     /* position: relative;
     z-index: 2; */
 }

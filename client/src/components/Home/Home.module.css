@@ -19,8 +19,8 @@
     
     height: 100vh;
     background-image: url("../../../public/images/home-page-car.jpg");
-    background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100vw;
     z-index: -1;
     opacity: 0.8;
     box-shadow: inset 0 5px 50px gray;
