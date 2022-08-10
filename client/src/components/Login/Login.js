@@ -11,20 +11,20 @@ function Login() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await login("peter@abv.bg", "123456");
-      userLogin(result);
-      navigate("/");
+      try {
+        const result = await login("peter@abv.bg", "123456");
+        userLogin(result);
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+      }
     }
-    try {
-      fetchData();
-    } catch (error) {
-      console.log(error);
-    }
+    fetchData();
   });
 
   return (
     <div className={styles.main}>
-      <form>
+      <form className={styles.form}>
         <h1>Login</h1>
 
         <label>

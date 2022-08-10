@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-form {
+.form {
   width: 40%;
   min-width: 400px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -22,28 +22,28 @@ form {
   padding: 0 35px 35px 35px;
 }
 
-form * {
+.form * {
   color: #ffffff;
   letter-spacing: 1.5px;
   outline: none;
   border: none;
 }
 
-form h1 {
+.form h1 {
   font-size: 40px;
   font-weight: 600;
   line-height: 42px;
   text-align: center;
 }
 
-label {
+.form label {
   display: block;
   margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
 }
 
-input {
+.form input {
   display: block;
   height: 50px;
   width: 100%;
@@ -53,15 +53,15 @@ input {
   margin-top: 8px;
   font-size: 14px;
 }
-::placeholder {
+.form ::placeholder {
   color: #928c8c;
 }
 
-input:hover {
+.form input:hover {
   outline: 1px solid rgb(255, 194, 194);
 }
 
-button {
+.form button {
   display: block;
   margin: auto;
   margin-top: 50px;
@@ -74,10 +74,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 0.4em 0.4em -0.5em white;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-button:hover{
-    transform: translateY(-0.1em);
-    box-shadow: 0 0.5em 0.5em -0.35em rgb(255, 194, 194);
+.form button:hover {
+  transform: translateY(-0.1em);
+  box-shadow: 0 0.5em 0.5em -0.35em rgb(255, 194, 194);
 }

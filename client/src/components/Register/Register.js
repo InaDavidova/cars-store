@@ -26,7 +26,7 @@ function Register() {
 
   return (
     <div className={styles.main}>
-      <form>
+      <form className={styles.form}>
         <h1>Register</h1>
 
         <label>

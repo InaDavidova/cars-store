@@ -1642,7 +1642,20 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        cars: {
+            "c7f51805-242b-45ed-ae3e-80b68605141b": {
+    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+    			make: "VW",
+    			model: "Beetle",
+    			year: 1997,
+    			description: "Great condition. Negotiable price",
+    			price: 3400,
+    			img: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80",
+    			_createdOn: 1615546332126,
+    			_id: "c7f51805-242b-45ed-ae3e-80b68605141b"
+    		}
+        }
     };
     var rules$1 = {
     	users: {

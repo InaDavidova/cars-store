@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
+import MyAds from "./components/MyAds/MyAds";
 import NotFound from "./components/NotFound/NotFound";
 import Register from "./components/Register/Register";
 import { AuthContext } from "./contexts/AuthContext";
@@ -39,6 +40,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/my-ads" element={<MyAds />} />
             <Route path="/details/:productId" element={<Details />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
