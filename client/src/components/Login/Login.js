@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { login, register } from "../../services/authService";
+import { login } from "../../services/authService";
+import styles from "../Login/Login.module.css";
 
 function Login() {
   const { userLogin } = useContext(AuthContext);
@@ -11,7 +12,6 @@ function Login() {
   useEffect(() => {
     async function fetchData() {
       const result = await login("peter@abv.bg", "123456");
-      console.log(result);
       userLogin(result);
       navigate("/");
     }
@@ -22,7 +22,25 @@ function Login() {
     }
   });
 
-  return <form>Login page</form>;
+  return (
+    <div className={styles.main}>
+      <form>
+        <h1>Login</h1>
+
+        <label>
+          Username
+          <input type="text" placeholder="Username" id="username" />
+        </label>
+
+        <label>
+          Password
+          <input type="password" placeholder="Password" id="password" />
+        </label>
+
+        <button>Log In</button>
+      </form>
+    </div>
+  );
 }
 
 export default Login;

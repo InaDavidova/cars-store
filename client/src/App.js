@@ -11,19 +11,25 @@ import Register from "./components/Register/Register";
 import { AuthContext } from "./contexts/AuthContext";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    const userData = localStorage.getItem("userData");
 
-  function userLogin(userData){
+    return userData ? JSON.parse(userData) : null;
+  });
+
+  function userLogin(userData) {
     setUser(userData);
+    localStorage.setItem("userData", JSON.stringify(userData));
     console.log("user data", userData);
   }
 
-  function userLogout(){
+  function userLogout() {
     setUser(null);
+    localStorage.removeItem("userData");
   }
 
   return (
-    <AuthContext.Provider value={{user, userLogin, userLogout}}>
+    <AuthContext.Provider value={{ user, userLogin, userLogout }}>
       <div className="App">
         <Header />
 
