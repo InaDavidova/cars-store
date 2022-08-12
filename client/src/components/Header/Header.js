@@ -5,7 +5,6 @@ import styles from "../Header/Header.module.css";
 
 function Header() {
   const { user } = useContext(AuthContext);
-  console.log(user, "user");
   const setNavStyle = ({ isActive }) => {
     return isActive ? styles["activeLink"] : undefined;
   };

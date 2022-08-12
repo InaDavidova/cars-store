@@ -1,15 +1,23 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 import { getAllCars } from "../../services/carsService";
 import AdCard from "../AdCard/AdCard";
 import styles from "../Home/Home.module.css";
 
 function Home() {
   const [ads, setAds] = useState([]);
+  const {userLogout} = useContext(AuthContext);
 
   useEffect(() => {
     getAllCars().then((data) => {
       setAds(data);
+    }).catch((error) =>{
+      console.log(error.message);
+      if(error.status === 403){
+        userLogout();
+      };
     });
+    
   }, []);
 
   return (
