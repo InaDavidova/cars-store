@@ -2,27 +2,27 @@ import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { register } from "../../services/authService";
-import styles from "../Login/Login.module.css"
+import styles from "../common/css/Forms.module.css";
 
 function Register() {
   const { userLogin } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const result = await register("azpppeteer@abv.bg", "123456");
-        delete result.password;
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const result = await register("azpppeteer@abv.bg", "123456");
+  //       delete result.password;
 
-        userLogin(result);
-        navigate("/");
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchData();
-  });
+  //       userLogin(result);
+  //       navigate("/");
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchData();
+  // });
 
   return (
     <div className={styles.main}>

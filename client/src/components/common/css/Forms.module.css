@@ -2,6 +2,7 @@
   background: url(https://images.unsplash.com/photo-1629093173346-cb7b12766c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   min-height: 90vh;
   box-shadow: inset 0 5px 50px gray;
   position: absolute;
@@ -37,27 +38,42 @@
 }
 
 .form label {
+  position: relative;
   display: block;
   margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
+  text-indent: 10px;
 }
 
-.form input {
+.form input,
+.form select,
+.form textarea {
   display: block;
   height: 50px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 3px;
-  padding: 0 10px;
+  padding: 0 30px;
   margin-top: 8px;
   font-size: 14px;
 }
-.form ::placeholder {
+
+.form textarea{
+  padding-top: 10px;
+}
+
+.form option{
+  background-color: rgb(32, 37, 41);
+ font-size: 20px;
+}
+
+.form ::placeholder{
   color: #928c8c;
 }
 
-.form input:hover {
+.form input:hover,
+.form select:hover {
   outline: 1px solid rgb(255, 194, 194);
 }
 
@@ -80,4 +96,30 @@
 .form button:hover {
   transform: translateY(-0.1em);
   box-shadow: 0 0.5em 0.5em -0.35em rgb(255, 194, 194);
+}
+
+.form label span {
+  position: absolute;
+  font-size: 22px;
+  top: 38px;
+  left: -3px;
+  color: rgb(251, 107, 74);
+  font-weight: 600;
+}
+
+.form .xsSpan {
+  font-size: 11px;
+  top: 45px;
+  left: -7px;
+}
+
+.error {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(165, 0, 0);
+  padding: 4px 10px;
+  margin-top: 3px;
+  background-color: rgb(214, 165, 165);
+  letter-spacing: 0.2px;
+  border-radius: 4px;
 }

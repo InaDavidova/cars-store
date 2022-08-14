@@ -3,6 +3,7 @@ import "./App.css";
 import RouteGuard from "./components/common/RouteGuard";
 import CrerateAd from "./components/CrerateAd/CrerateAd";
 import Details from "./components/Details/Details";
+import EditAd from "./components/EditAd/EditAd";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -24,6 +25,7 @@ function App() {
               <Route path="/logout" element={<Logout />} />
               <Route path="/my-ads" element={<MyAds />} />
               <Route path="/create" element={<CrerateAd />} />
+              <Route path="/edit/:productId" element={<EditAd />} />
             </Route>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

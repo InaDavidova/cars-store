@@ -6,18 +6,19 @@ import styles from "../Home/Home.module.css";
 
 function Home() {
   const [ads, setAds] = useState([]);
-  const {userLogout} = useContext(AuthContext);
+  const { userLogout } = useContext(AuthContext);
 
   useEffect(() => {
-    getAllCars().then((data) => {
-      setAds(data);
-    }).catch((error) =>{
-      console.log(error.message);
-      if(error.status === 403){
-        userLogout();
-      };
-    });
-    
+    getAllCars()
+      .then((data) => {
+        setAds(data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+        if (error.status === 403) {
+          userLogout();
+        }
+      });
   }, []);
 
   return (
@@ -28,8 +29,8 @@ function Home() {
           new owner for the one that you no longer need.
         </h1>
       </div>
-      <div>
-        <h2>Latest additions</h2>
+      <h2>Latest additions</h2>
+      <div className={styles.latestAdsContainer}>
         {ads.map((el) => (
           <AdCard key={el._id} ad={el} />
         ))}

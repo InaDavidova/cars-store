@@ -6,12 +6,6 @@ async function request(url, options) {
         const response = await fetch(baseUrl + url, options);
 
         if (response.ok !== true) {
-            
-            // if (response.status === 403) {
-            //     localStorage.removeItem("userData");
-            //     // userLogout();
-            // }
-
             const result = await response.json();
             const error = new Error(result.message);
             error.status = response.status;
