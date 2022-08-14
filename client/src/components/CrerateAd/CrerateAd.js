@@ -3,10 +3,11 @@ import { carBrands, fuelOptions } from "../../data/optionsData";
 import { useState } from "react";
 import inputValidator from "./inputValidator";
 import { createCar } from "../../services/carsService";
+import { useNavigate } from "react-router-dom";
 
 function CrerateAd() {
   const [errors, setErrors] = useState({});
-
+  const navigate = useNavigate();
   async function onSubmitHandler(e) {
     e.preventDefault();
 
@@ -44,6 +45,7 @@ function CrerateAd() {
         // setErrors(inputValidator(newAd));
         await createCar(newAd);
         e.target.reset();
+        navigate("/my-ads");
       } else {
       }
       setErrors(errObj);

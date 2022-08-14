@@ -1,0 +1,77 @@
+.main {
+  display: flex;
+  margin: 15px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.main img {
+  width: 65%;
+  object-fit: cover;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.main .details h1 {
+  text-align: center;
+  color: rgb(251, 107, 74);
+}
+
+.details {
+  width: 100%;
+}
+
+.details ul {
+  list-style: none;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+
+.details span {
+  font-weight: 600;
+}
+
+.price {
+  margin-top: 20px;
+  font-size: 25px;
+  color: rgb(251, 107, 74);
+  text-align: center;
+}
+
+.price span {
+  color: rgb(119, 67, 56);
+  margin-right: 25px;
+}
+
+.details button {
+  width: 40%;
+  margin-left: 5%;
+  padding: 7px;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.editBtn {
+  background-color: white;
+  border-color: rgb(46, 168, 46);
+  color: rgb(46, 168, 46);
+}
+
+.editBtn:hover {
+  transform: translateY(-0.1em);
+  box-shadow: 0 0.3em 0.7em -0.35em rgb(0, 92, 12);
+}
+
+.deleteBtn {
+  background-color: rgb(202, 4, 4);
+  border-color: rgb(202, 4, 4);
+  color: white;
+}
+
+.deleteBtn:hover {
+  transform: translateY(-0.1em);
+  box-shadow: 0 0.3em 0.7em -0.35em rgb(136, 0, 0);
+}

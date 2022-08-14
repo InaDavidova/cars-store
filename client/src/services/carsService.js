@@ -8,14 +8,9 @@ export async function getAllCars() {
 }
 
 export async function getCarById(id) {
-  try {
-    const request = await get(baseUrl + `/${id}`);
+  const request = await get(baseUrl + `/${id}`);
 
-    const result = await request.json();
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
+  return request;
 }
 
 export async function deleteCar(id) {
