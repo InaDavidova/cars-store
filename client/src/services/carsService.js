@@ -14,14 +14,9 @@ export async function getCarById(id) {
 }
 
 export async function deleteCar(id) {
-  try {
-    const request = await del(baseUrl + `/${id}`);
+  const request = await del(baseUrl + `/${id}`);
 
-    const result = await request.json();
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
+  return request;
 }
 
 export async function editCar(id, data) {

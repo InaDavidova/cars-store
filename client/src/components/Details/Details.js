@@ -1,21 +1,22 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { getCarById } from "../../services/carsService";
+import { deleteCar, getCarById } from "../../services/carsService";
 import styles from "../Details/Details.module.css";
 import defaultCarImg from "../common/images/defaultCarImg.png";
+import { confirmAlert } from "react-confirm-alert";
+import ConfirmModal from "../ConfirmModal/ConfirmModal";
 
 function Details() {
   const { productId } = useParams();
   const { user, userLogout } = useContext(AuthContext);
   const [carData, serCarData] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCarById(productId)
       .then((data) => {
         serCarData(data);
-        console.log(data);
-        console.log(user);
       })
       .catch((error) => {
         console.log(error.message);
@@ -24,6 +25,24 @@ function Details() {
         }
       });
   }, [userLogout, productId]);
+
+  async function onDeleteHandler() {
+    async function onConfirm() {
+      try {
+        const result = await deleteCar(productId);
+        console.log("result", result);
+        navigate("/my-ads", { replace: true });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return <ConfirmModal onClose={onClose} onConfirm={onConfirm} />;
+      },
+    });
+  }
 
   return (
     <div className={styles.main}>
@@ -67,11 +86,13 @@ function Details() {
             <span>Price: </span>€{carData.price}
           </li>
         </ul>
-        
+
         {user && carData && user._id === carData._ownerId && (
           <>
             <button className={styles.editBtn}>Edit</button>
-            <button className={styles.deleteBtn}>Delete</button>
+            <button onClick={onDeleteHandler} className={styles.deleteBtn}>
+              Delete
+            </button>
           </>
         )}
       </div>
