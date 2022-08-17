@@ -20,14 +20,9 @@ export async function deleteCar(id) {
 }
 
 export async function editCar(id, data) {
-  try {
-    const request = await put(baseUrl + `/${id}`, data);
+  const request = await put(baseUrl + `/${id}`, data);
 
-    const result = await request.json();
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
+  return request;
 }
 
 export async function createCar(data) {

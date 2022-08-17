@@ -10,13 +10,13 @@ import ConfirmModal from "../ConfirmModal/ConfirmModal";
 function Details() {
   const { productId } = useParams();
   const { user, userLogout } = useContext(AuthContext);
-  const [carData, serCarData] = useState({});
+  const [carData, setCarData] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
     getCarById(productId)
       .then((data) => {
-        serCarData(data);
+        setCarData(data);
       })
       .catch((error) => {
         console.log(error.message);
@@ -25,6 +25,10 @@ function Details() {
         }
       });
   }, [userLogout, productId]);
+
+  function onEditHandler() {
+    navigate(`/edit/${productId}`);
+  }
 
   async function onDeleteHandler() {
     async function onConfirm() {
@@ -89,7 +93,9 @@ function Details() {
 
         {user && carData && user._id === carData._ownerId && (
           <>
-            <button className={styles.editBtn}>Edit</button>
+            <button onClick={onEditHandler} className={styles.editBtn}>
+              Edit
+            </button>
             <button onClick={onDeleteHandler} className={styles.deleteBtn}>
               Delete
             </button>

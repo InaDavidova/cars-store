@@ -5,7 +5,7 @@ import inputValidator from "./inputValidator";
 import { createCar } from "../../services/carsService";
 import { useNavigate } from "react-router-dom";
 
-function CrerateAd() {
+function CreateAd() {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   async function onSubmitHandler(e) {
@@ -197,4 +197,4 @@ function CrerateAd() {
   );
 }
 
-export default CrerateAd;
+export default CreateAd;

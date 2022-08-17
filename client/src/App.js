@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import RouteGuard from "./components/common/RouteGuard";
-import CrerateAd from "./components/CrerateAd/CrerateAd";
+import CreateAd from "./components/CreateAd/CreateAd";
 import Details from "./components/Details/Details";
 import EditAd from "./components/EditAd/EditAd";
 import Header from "./components/Header/Header";
@@ -24,7 +24,7 @@ function App() {
             <Route element={<RouteGuard />}>
               <Route path="/logout" element={<Logout />} />
               <Route path="/my-ads" element={<MyAds />} />
-              <Route path="/create" element={<CrerateAd />} />
+              <Route path="/create" element={<CreateAd />} />
               <Route path="/edit/:productId" element={<EditAd />} />
             </Route>
             <Route path="/" element={<Home />} />
