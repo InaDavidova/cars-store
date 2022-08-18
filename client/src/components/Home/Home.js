@@ -19,7 +19,7 @@ function Home() {
           userLogout();
         }
       });
-  }, []);
+  }, [userLogout]);
 
   return (
     <>
@@ -29,7 +29,7 @@ function Home() {
           new owner for the one that you no longer need.
         </h1>
       </div>
-      <h2>Latest additions</h2>
+      <h2 className={styles.latesttAdsHeader}>Latest additions</h2>
       <div className={styles.latestAdsContainer}>
         {ads.map((el) => (
           <AdCard key={el._id} ad={el} />

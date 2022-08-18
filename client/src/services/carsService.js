@@ -31,15 +31,10 @@ export async function createCar(data) {
   return request;
 }
 
-export async function getUserCars(userId) {
-  try {
-    const request = await get(
-      baseUrl + `?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`
-    );
+export async function getUsersCars(userId) {
+  const request = await get(
+    baseUrl + `?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`
+  );
 
-    const result = await request.json();
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
+  return request;
 }

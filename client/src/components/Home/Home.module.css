@@ -31,8 +31,22 @@
   box-shadow: inset 0 5px 50px gray;
 }
 
-.latestAdsContainer{
+.latesttAdsHeader {
+  width: 70%;
+  margin: 50px auto;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgb(56, 56, 56);
+  color: rgb(56, 56, 56);
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+
+.latestAdsContainer {
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 @media screen and (max-width: 1024px) {

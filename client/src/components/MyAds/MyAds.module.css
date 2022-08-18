@@ -1,0 +1,36 @@
+.myAdsHeader {
+  width: 70%;
+  margin: 50px auto;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgb(56, 56, 56);
+  color: rgb(56, 56, 56);
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+
+.createAdBtn {
+  display: block;
+  margin: 50px auto;
+  border: none;
+  background-color: white;
+}
+
+.createAdBtn a {
+  text-decoration: none;
+  background-color: rgb(23, 161, 23);
+  border: none;
+  border-radius: 15px;
+  padding: 15px 50px;
+  color: white;
+  font-size: 25px;
+}
+
+.adsContainer {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}

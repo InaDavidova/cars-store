@@ -27,7 +27,6 @@ function EditAd() {
     getCarById(productId)
       .then((data) => {
         setAdData(data);
-        console.log(data);
       })
       .catch((error) => {
         console.log(error.message);
