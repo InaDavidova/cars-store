@@ -1,41 +1,70 @@
-import { useContext, useEffect } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { login } from "../../services/authService";
 import styles from "../common/css/Forms.module.css";
 
 function Login() {
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, userLogout } = useContext(AuthContext);
+  const [error, setError] = useState(null);
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const result = await login("peter@abv.bg", "123456");
-        userLogin(result);
-        navigate("/");
-      } catch (error) {
-        console.log(error);
-      }
+  function inputChangeHandler(e) {
+    const inputName = e.target.name;
+    const inputValue = e.target.value;
+    const newLoginData = { ...loginData };
+    newLoginData[inputName] = inputValue;
+    setLoginData(newLoginData);
+
+    setError(null);
+  }
+
+  async function onSubmitFormHandler(e) {
+    e.preventDefault();
+    try {
+      const result = await login(loginData.email, loginData.password);
+      userLogin(result);
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
     }
-    fetchData();
-  });
+  }
 
   return (
     <div className={styles.main}>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={onSubmitFormHandler}>
         <h1>Login</h1>
 
         <label>
-          Username
-          <input type="text" placeholder="Username" id="username" />
+          Email
+          <input
+            type="email"
+            placeholder="Email"
+            id="email"
+            name="email"
+            value={loginData.email}
+            onChange={inputChangeHandler}
+          />
         </label>
 
         <label>
           Password
-          <input type="password" placeholder="Password" id="password" />
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            name="password"
+            value={loginData.password}
+            onChange={inputChangeHandler}
+          />
         </label>
+
+        {error && <p className={styles.error}>{error}</p>}
 
         <button>Log In</button>
       </form>

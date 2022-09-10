@@ -60,6 +60,7 @@ function EditAd() {
     delete updatedErrors[inputName];
     setErrors(updatedErrors);
   }
+  
   return (
     <div className={styles.main}>
       <form className={styles.form} onSubmit={onSubmitHandler}>

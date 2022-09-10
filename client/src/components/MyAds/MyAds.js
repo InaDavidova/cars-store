@@ -13,7 +13,6 @@ function MyAds() {
     getUsersCars(user._id)
       .then((data) => {
         setAds(data);
-        console.log(data);
       })
       .catch((error) => {
         console.log(error.message);

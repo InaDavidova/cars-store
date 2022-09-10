@@ -11,7 +11,9 @@ function Home() {
   useEffect(() => {
     getAllCars()
       .then((data) => {
-        setAds(data);
+        setAds(data
+          .sort((a, b) => b._createdOn - a._createdOn)
+          .slice(0, 5));
       })
       .catch((error) => {
         console.log(error.message);
