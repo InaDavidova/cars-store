@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { register } from "../../services/authService";
 import styles from "../common/css/Forms.module.css";
@@ -89,6 +89,12 @@ function Register() {
         {error && <p className={styles.error}>{error}</p>}
 
         <button>Register</button>
+
+        <p>
+          Already have an account?
+          <Link to={"/login"}> Sign In</Link>
+        </p>
+
       </form>
     </div>
   );

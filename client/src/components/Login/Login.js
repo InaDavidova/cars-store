@@ -67,6 +67,11 @@ function Login() {
         {error && <p className={styles.error}>{error}</p>}
 
         <button>Log In</button>
+
+        <p>
+          Don't have an account?
+          <Link to={"/register"}> Sign up</Link>
+        </p>
       </form>
     </div>
   );
