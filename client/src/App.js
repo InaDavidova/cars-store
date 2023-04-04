@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import RouteGuard from "./components/common/RouteGuard";
+import AuthGuard from "./guards/AuthGuard";
+import IsOwnerGuard from "./guards/IsOwnerGuard";
 import CreateAd from "./components/CreateAd/CreateAd";
 import Details from "./components/Details/Details";
 import EditAd from "./components/EditAd/EditAd";
@@ -21,11 +22,13 @@ function App() {
 
         <main>
           <Routes>
-            <Route element={<RouteGuard />}>
+            <Route element={<AuthGuard />}>
               <Route path="/logout" element={<Logout />} />
               <Route path="/my-ads" element={<MyAds />} />
               <Route path="/create" element={<CreateAd />} />
-              <Route path="/edit/:productId" element={<EditAd />} />
+              <Route element={<IsOwnerGuard />}>
+                <Route path="/edit/:productId" element={<EditAd />} />
+              </Route>
             </Route>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

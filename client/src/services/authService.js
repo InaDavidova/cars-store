@@ -7,20 +7,6 @@ export async function login(email, password) {
   const request = post(`/users/login`, {email,password});
 
   return request;
-  // try {
-  //   const res = await fetch(`${baseUrl}/users/login`, {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json"
-  //     },
-  //     body: JSON.stringify({ email, password }),
-  //   });
-  //   console.log(res, "reponse");
-  //   const result = await res.json();
-  //   return result;
-  // } catch (error) {
-  //   throw error;
-  // }
 }
 
 export async function register(email, password) {

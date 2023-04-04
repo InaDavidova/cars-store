@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { login } from "../../services/authService";
 import styles from "../common/css/Forms.module.css";
 
 function Login() {
-  const { userLogin, userLogout } = useContext(AuthContext);
+  const { userLogin } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const [loginData, setLoginData] = useState({
     email: "",

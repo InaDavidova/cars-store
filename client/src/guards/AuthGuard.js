@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../contexts/AuthContext";
 
-const RouteGuard = ({ children }) => {
+const AuthGuard = ({ children }) => {
   const { user } = useContext(AuthContext);
 
   if (!user) {
@@ -12,4 +12,4 @@ const RouteGuard = ({ children }) => {
   return children ? children : <Outlet />;
 };
 
-export default RouteGuard;
+export default AuthGuard;
