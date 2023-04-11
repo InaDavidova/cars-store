@@ -26,6 +26,16 @@
   font-size: 25px;
 }
 
+.createAdBtn a:hover {
+  box-shadow: 0 0.3em 0.3em -0.2em #204768;
+  transition: all 0.5s ease;
+}
+
+.createAdBtn:hover {
+  transform: translateY(-0.1em);
+  transition: all 0.5s ease;
+}
+
 .adsContainer {
   display: flex;
   width: 80%;
