@@ -22,3 +22,7 @@ nav a {
 .activeLink{
     font-weight: bold;
 }
+
+.logo {
+    height: 1.5em;
+}
