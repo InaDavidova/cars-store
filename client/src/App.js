@@ -6,6 +6,7 @@ import CreateAd from "./components/CreateAd/CreateAd";
 import Details from "./components/Details/Details";
 import EditAd from "./components/EditAd/EditAd";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
@@ -20,7 +21,7 @@ function App() {
       <div className="App">
         <Header />
 
-        <main>
+        <main className="main">
           <Routes>
             <Route element={<AuthGuard />}>
               <Route path="/logout" element={<Logout />} />
@@ -37,6 +38,8 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+
+        <Footer />
       </div>
     </AuthProvider>
   );
