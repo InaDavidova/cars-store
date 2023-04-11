@@ -27,21 +27,20 @@ function Register() {
 
   async function onSubmitFormHandler(e) {
     e.preventDefault();
-    if (
-      registerData.email &&
-      registerData.password &&
-      registerData.password === registerData.repass
-    ) {
-      try {
-        const result = await register(
-          registerData.email,
-          registerData.password
-        );
-        userLogin(result);
-        navigate("/");
-      } catch (error) {
-        setError(error.message);
+    try {
+      if (!registerData.email || !registerData.password || !registerData.repass) {
+        throw new Error("All fields are requred!");
       }
+
+      if (registerData.password !== registerData.repass) {
+        throw new Error("Passwords don't match!");
+      }
+
+      const result = await register(registerData.email.trim(), registerData.password.trim());
+      userLogin(result);
+      navigate("/");
+    } catch (error) {
+      setError(error.message);
     }
   }
 
@@ -51,7 +50,7 @@ function Register() {
         <h1>Register</h1>
 
         <label>
-          Email
+          Email *
           <input
             type="text"
             placeholder="Email"
@@ -63,7 +62,7 @@ function Register() {
         </label>
 
         <label>
-          Password
+          Password *
           <input
             type="password"
             placeholder="Password"
@@ -75,13 +74,13 @@ function Register() {
         </label>
 
         <label>
-          Password
+          Repeat Password *
           <input
             type="password"
             placeholder="Repeat Password"
             id="repass"
             name="repass"
-            value={registerData.rePassword}
+            value={registerData.repass}
             onChange={inputChangeHandler}
           />
         </label>
@@ -94,7 +93,6 @@ function Register() {
           Already have an account?
           <Link to={"/login"}> Sign In</Link>
         </p>
-
       </form>
     </div>
   );

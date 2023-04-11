@@ -27,7 +27,10 @@ function Login() {
   async function onSubmitFormHandler(e) {
     e.preventDefault();
     try {
-      const result = await login(loginData.email, loginData.password);
+      if (!loginData.email || !loginData.password) {
+        throw new Error("Both fields are requred!");
+      }
+      const result = await login(loginData.email.trim(), loginData.password.trim());
       userLogin(result);
       navigate("/");
     } catch (error) {
@@ -41,7 +44,7 @@ function Login() {
         <h1>Login</h1>
 
         <label>
-          Email
+          Email *
           <input
             type="email"
             placeholder="Email"
@@ -53,7 +56,7 @@ function Login() {
         </label>
 
         <label>
-          Password
+          Password *
           <input
             type="password"
             placeholder="Password"
