@@ -34,3 +34,8 @@
   justify-content: space-evenly;
   gap: 20px;
 }
+
+.noAdsMsg {
+  text-align: center;
+  font-style: italic;
+}

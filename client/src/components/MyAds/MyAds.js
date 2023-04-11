@@ -22,6 +22,11 @@ function MyAds() {
   return (
     <>
       <h1 className={styles.myAdsHeader}>My Ads</h1>
+
+      {ads.length === 0 && 
+        <p className={styles.noAdsMsg}>You have no postings yet.</p>
+      }
+
       <button className={styles.createAdBtn}>
         <Link to={"/create"}>Create New Ad</Link>
       </button>
