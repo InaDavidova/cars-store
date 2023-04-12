@@ -14,6 +14,7 @@ import MyAds from "./components/MyAds/MyAds";
 import NotFound from "./components/NotFound/NotFound";
 import Register from "./components/Register/Register";
 import { AuthProvider } from "./contexts/AuthContext";
+import Catalog from "./components/Catalog/Catalog";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               </Route>
             </Route>
             <Route path="/" element={<Home />} />
+            <Route path="/catalog" element={<Catalog />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/details/:productId" element={<Details />} />

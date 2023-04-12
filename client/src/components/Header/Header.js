@@ -20,6 +20,12 @@ function Header() {
             Home
           </NavLink>
         </li>
+        
+        <li>
+          <NavLink className={setNavStyle} to={"/catalog"}>
+            Catalog
+          </NavLink>
+        </li>
 
         {!user && (
           <>
