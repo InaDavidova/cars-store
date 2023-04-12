@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "../AdCard/AdCard.module.css";
-import defaultCarImg from "../common/images/defaultCarImg.png";
+import defaultCarImg from "../../common/images/defaultCarImg.png";
 
 function AdCard({ ad }) {
   return (

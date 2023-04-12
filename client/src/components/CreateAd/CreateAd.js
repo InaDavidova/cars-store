@@ -1,4 +1,4 @@
-import styles from "../common/css/Forms.module.css";
+import styles from "../../common/css/Forms.module.css";
 import { carBrands, fuelOptions } from "../../data/optionsData";
 import { useState } from "react";
 import inputValidator from "./inputValidator";

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { register } from "../../services/authService";
-import styles from "../common/css/Forms.module.css";
+import styles from "../../common/css/Forms.module.css";
 
 function Register() {
   const { userLogin } = useContext(AuthContext);

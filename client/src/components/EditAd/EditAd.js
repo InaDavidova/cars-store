@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import styles from "../common/css/Forms.module.css";
+import styles from "../../common/css/Forms.module.css";
 import { carBrands, fuelOptions } from "../../data/optionsData";
 import { useEffect, useState } from "react";
 import inputValidator from "./inputValidator";

@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { deleteCar, getCarById } from "../../services/carsService";
 import styles from "../Details/Details.module.css";
-import defaultCarImg from "../common/images/defaultCarImg.png";
+import defaultCarImg from "../../common/images/defaultCarImg.png";
 import { confirmAlert } from "react-confirm-alert";
 import ConfirmModal from "../ConfirmModal/ConfirmModal";
 
