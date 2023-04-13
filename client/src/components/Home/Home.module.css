@@ -21,7 +21,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-
   background-image: url("../../common/images/home-page-car.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,6 +47,34 @@
   flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 50px;
+}
+
+.seeAds {
+  display: block;
+  margin: 50px auto;
+  border: none;
+  background-color: white;
+}
+
+.seeAds a {
+  text-decoration: none;
+  background-color: rgb(23, 161, 23);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 50px;
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 0.2em 0.2em -0.2em #204768;
+}
+
+.seeAds a:hover {
+  box-shadow: 0 0.3em 0.3em -0.2em #204768;
+  transition: all 0.5s ease;
+}
+
+.seeAds:hover {
+  transform: translateY(-0.1em);
+  transition: all 0.5s ease;
 }
 
 @media screen and (max-width: 1024px) {

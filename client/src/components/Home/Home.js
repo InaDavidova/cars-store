@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { getAllCars } from "../../services/carsService";
 import AdCard from "../AdCard/AdCard";
@@ -27,7 +28,7 @@ function Home() {
     <>
       <div className={styles.landingView}>
         <h1>
-          Welcome to the Moto world! Here you can find your dream car or find a
+          Welcome to the MotoShop! Here you can find your dream car or find a
           new owner for the one that you no longer need.
         </h1>
       </div>
@@ -37,6 +38,10 @@ function Home() {
           <AdCard key={el._id} ad={el} />
         ))}
       </div>
+
+      <button className={styles.seeAds}>
+        <Link to={"/catalog"}>See all ads</Link>
+      </button>
     </>
   );
 }
