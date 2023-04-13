@@ -9,7 +9,7 @@ function AdCard({ ad }) {
       <h3>
         {ad.brand} {ad.model}
       </h3>
-      <p className={styles.price}>${ad.price}</p>
+      <p className={styles.price}>€ {ad.price}</p>
       <Link to={`/details/${ad._id}`}>
         <button>Details</button>
       </Link>

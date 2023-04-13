@@ -1,0 +1,9 @@
+.image {
+   background-image: url("../../common/images/404.png");
+   width: 60%;
+   margin: auto;
+   height: 82vh;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
+}

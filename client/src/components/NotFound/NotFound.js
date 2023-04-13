@@ -1,8 +1,7 @@
+import styles from "../NotFound/NotFound.module.css";
 
 function NotFound() {
-  return (
-  <h1>404 Page Not Found</h1>
-  );
-};
+  return <div className={styles.image} />;
+}
 
 export default NotFound;

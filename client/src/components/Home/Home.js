@@ -13,7 +13,7 @@ function Home() {
       .then((data) => {
         setAds(data
           .sort((a, b) => b._createdOn - a._createdOn)
-          .slice(0, 5));
+          .slice(0, 4));
       })
       .catch((error) => {
         console.log(error.message);
