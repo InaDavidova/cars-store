@@ -107,8 +107,8 @@ function CreateAd() {
           Year *
           <input
             type="number"
-            defaultValue={2022}
-            max={2022}
+            defaultValue={2023}
+            max={2023}
             min={1884}
             id="year"
             name="year"
