@@ -75,3 +75,18 @@
   transform: translateY(-0.1em);
   box-shadow: 0 0.3em 0.7em -0.35em rgb(136, 0, 0);
 }
+
+ul .contact {
+  color: rgb(136, 0, 0);
+  display: inline;
+}
+
+.loginBtn {
+  background-color: rgb(46, 168, 46);
+  color: white;
+  padding: 3px 7px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline;
+  margin-left: 10px;
+}

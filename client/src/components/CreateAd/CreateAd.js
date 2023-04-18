@@ -1,11 +1,13 @@
 import styles from "../../common/css/Forms.module.css";
 import { carBrands, fuelOptions } from "../../data/optionsData";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import inputValidator from "./inputValidator";
 import { createCar } from "../../services/carsService";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function CreateAd() {
+  const { user } = useContext(AuthContext);
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   async function onSubmitHandler(e) {
@@ -36,6 +38,7 @@ function CreateAd() {
       engine,
       description: description.trim(),
       image: image.trim(),
+      ownerContact: user.email,
     };
 
     try {

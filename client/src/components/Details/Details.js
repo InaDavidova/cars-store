@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { deleteCar, getCarById } from "../../services/carsService";
 import styles from "../Details/Details.module.css";
@@ -25,7 +25,6 @@ function Details() {
         }
       });
   }, [userLogout, productId]);
-
   function onEditHandler() {
     navigate(`/edit/${productId}`);
   }
@@ -33,8 +32,7 @@ function Details() {
   async function onDeleteHandler() {
     async function onConfirm() {
       try {
-        const result = await deleteCar(productId);
-        console.log("result", result);
+        await deleteCar(productId);
         navigate("/my-ads", { replace: true });
       } catch (error) {
         console.log(error);
@@ -47,7 +45,7 @@ function Details() {
       },
     });
   }
-
+  
   return (
     <div className={styles.main}>
       <img src={carData.image || defaultCarImg} alt="car" />
@@ -86,6 +84,22 @@ function Details() {
             <span>Description: </span>
             {carData.description || "-"}
           </li>
+          {user && user._id !== carData._ownerId && (
+            <li>
+              <span>Seller's contact: </span>
+              {carData.ownerContact}
+            </li>
+          )}
+          {!user && (
+            <>
+              <li className={styles.contact}>
+                <span>Login to see the seller's contact!</span>
+              </li>
+              <Link to={"/login"} className={styles.loginBtn}>
+                Log In
+              </Link>
+            </>
+          )}
           <li className={styles.price}>
             <span>Price: </span>€{carData.price}
           </li>

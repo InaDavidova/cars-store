@@ -54,6 +54,7 @@ function Header() {
                 Logout
               </NavLink>
             </li>
+            <li className={styles.userEmail}>{user.email}</li>
           </>
         )}
       </ul>
